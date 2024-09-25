@@ -1,0 +1,32 @@
+<Ui xmlns="http://www.w3.org/1999/xhtml">
+    <Frame name="BingoFrame" hidden="true">
+        <Size>
+            <AbsDimension x="400" y="400"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Backdrop bgFile="Interface/Tooltips/UI-Tooltip-Background" edgeFile="Interface/Tooltips/UI-Tooltip-Border" tile="true" tileSize="16" edgeSize="16" insets="2">
+            <BackgroundColor r="0" g="0" b="0" a="0.8"/>
+        </Backdrop>
+        <Scripts>
+            <OnLoad>
+                self:RegisterForDrag("LeftButton")
+                self:SetMovable(true)
+                self:EnableMouse(true)
+            </OnLoad>
+        </Scripts>
+
+        <!-- Create the bingo squares -->
+        <GridLayout name="BingoGrid" cols="5" rows="5" cellSize="80">
+            <Frame name="BingoSquare1" inherits="BingoSquareTemplate">
+                <Scripts>
+                    <OnClick>
+                        BingoAddon:ToggleDropdown(self)
+                    </OnClick>
+                </Scripts>
+            </Frame>
+            <!-- Repeat for other squares -->
+        </GridLayout>
+    </Frame>
+</Ui>

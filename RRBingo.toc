@@ -1,0 +1,8 @@
+## Interface: 12002
+## Title: Ram Ranch Bingo
+## Notes: A bingo game for raid groups
+## Author: Matthew Arsenault
+## Version: 0.1
+
+BingoAddon.lua
+BingoAddon.xml
